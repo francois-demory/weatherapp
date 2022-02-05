@@ -3,10 +3,11 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const mainController = {
     async home(req, res, next) {
         try {
-            const query = await (await fetch(`${process.env.apiURL}${process.env.apiKey}&query=montpellier`)).json();
-            const city = query.location;
-            const datas = query.current;
-            res.render('index', {city, datas});
+            const current = await (await fetch(`${process.env.currentWeatherURL}&key=${process.env.apiKey}&city=montpellier`)).json();
+            const forecast = await (await fetch(`${process.env.forecastWeatherURL}&key=${process.env.apiKey}&city=montpellier`)).json();
+            const currentDatas = current.data[0];
+            const forecastDatas = forecast.data;
+            res.render('index', { currentDatas, forecastDatas });
         } catch(err) {
             next(err);
         }
@@ -15,10 +16,11 @@ const mainController = {
     async searchCity(req, res, next) {
         try {
             const searchedCity = req.body.city;
-            const query = await (await fetch(`${process.env.apiURL}${process.env.apiKey}&query=${searchedCity}`)).json();
-            const city = query.location;
-            const datas = query.current;
-            res.render('index', {city, datas});
+            const current = await (await fetch(`${process.env.currentWeatherURL}&key=${process.env.apiKey}&city=${searchedCity}`)).json();
+            const forecast = await (await fetch(`${process.env.forecastWeatherURL}&key=${process.env.apiKey}&city=${searchedCity}`)).json();
+            const currentDatas = current.data[0];
+            const forecastDatas = forecast.data;
+            res.render('index', { currentDatas, forecastDatas });
         } catch(err) {
             next(err);
         }
