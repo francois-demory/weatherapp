@@ -25,7 +25,6 @@ body {
 
 .app__container {
     width: 50%;
-    max-height: 60%;
     background-color: var(--main-bg-color);
     border-radius: 10px;
     border: 4px solid var(--light-border-color);
@@ -38,20 +37,18 @@ body {
 
 .container__title {
     margin: 1em 0.5em;
-    height: 20%;
 }
 
 .container__data {
-    height: 50%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 0.5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .container__footer {
-    height: 30%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -104,7 +101,7 @@ body {
     width: 30%;
     display: flex;
     flex-flow: column nowrap;
-
+    align-items: center;
 }
 
 .data__info {
@@ -120,10 +117,39 @@ body {
 
 .img__icon {
     display: block;
-    width: 50%;
+    max-width: 100%;
 }
 
 .temperature__main {
     text-align: center;
     font-size: 4em;
+}
+
+.temperature__underline {
+    font-size: 2em;
+}
+
+.container__footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin-bottom: 0.5em;
+}
+
+.footer__forecast {
+    border: 1px solid var(--hover-bg-color);
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.forecast__title {
+    font-size: 0.6em;
+}
+
+.forecast__img {
+    display: block;
+    max-width: 60%;
 }

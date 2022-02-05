@@ -24,6 +24,7 @@
                 </div>
                 <div class="data__temperature">
                     <p class="temperature__main"><%= currentDatas.temp %>°</p>
+                    <p class="temperature__underline"><%= currentDatas.weather.description %></p>
                 </div>
                 <div class="data__info">
                     <p class="info__sec">Wind : <%= currentDatas.wind_spd %> m/s</p>
@@ -33,11 +34,13 @@
                 </div>
             </div>
             <div class="container__footer">
-                <p class="footer__forecast">
                     <% for (let i=0; i < 7; i++) { %>
-                        <%= forecastDatas[i].temp %>
+                        <div class="footer__forecast">
+                            <p class="forecast__title"><%= forecastDatas[i].valid_date %></p>
+                            <img class="forecast__img" src="https://www.weatherbit.io/static/img/icons/<%= forecastDatas[i].weather.icon %>.png" alt="">
+                            <p class="forecast__content"><%= forecastDatas[i].temp %>°</p>
+                        </div>
                     <%}%>
-            </p>
             </div>
         </div>
     </div>
