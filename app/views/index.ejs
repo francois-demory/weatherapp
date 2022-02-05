@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main__container">
+        <div class="app__container">
+            <div class="container__title">
+                <form method="POST" class="title__form">
+                    <input type="text" name="city" value="<%= city.name %>, <%= city.region %>, <%= city.country %>" class="title__input">
+                    <button class="title__button">Search</button>
+                </form>
+                    
+            </div>
+            <div class="container__data">
+                <div class="data__img">
+                    <img src="/img/sun.png" alt="" class="img__icon">
+                </div>
+                <div class="data__temperature">
+                    <p class="temperature__main"><%= datas.temperature %>°</p>
+                </div>
+                <div class="data__info">
+                    <p class="info__sec">Vent : <%= datas.wind_speed %> km/h</p>
+                    <p class="info__sec">Précipitations : <%= datas.precip %> mm</p>
+                    <p class="info__sec">Pression atmo : <%= datas.pressure %> mb</p>
+                </div>
+            </div>
+            <div class="container__footer">
+                <p class="footer__update">Dernière mise à jour : <%= datas.observation_time %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+:root {
+    --main-bg-color: #16394C;
+    --secondary-bg-color: #152F3D;
+    --light-bg-color: #295F7C;
+    --hover-bg-color: #61CAFF;
+    --light-border-color : #5F8195;
+    --main-font-family : 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #61CAFF;
+}
+
+.main__container {
+    height: 90vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.app__container {
+    width: 50%;
+    max-height: 60%;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+    border: 4px solid var(--light-border-color);
+    padding: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: var(--main-font-family);
+    color: white;
+}
+
+.container__title {
+    margin: 1em 0.5em;
+    height: 20%;
+}
+
+.container__data {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.container__footer {
+    height: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5em;
+}
+
+.title__form {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.title__input {
+    background-color: var(--secondary-bg-color);
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 0.3em;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    flex:2
+}
+
+.title__button {
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--light-bg-color);
+    color: white;
+    width: 20%;
+    font-size: 1.5em;
+
+}
+
+.title__button:hover{
+    transition: all ease-in-out 0.5s;
+    background-color: var(--hover-bg-color);
+}
+
+.data__img {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.data__temperature {
+    width: 30%;
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
+.data__info {
+    width: 30%;
+    height: 100%;
+    font-size: 1em;
+    font-weight: lighter;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+
+}
+
+.img__icon {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.temperature__main {
+    text-align: center;
+    font-size: 4em;
+}

@@ -1,0 +1,10 @@
+const express = require('express');
+const mainController = require('./controllers/mainController');
+
+const router = express.Router();
+
+router.get('/', mainController.home);
+router.post('/', mainController.searchCity);
+
+
+module.exports = router;
